@@ -1,12 +1,17 @@
 package srl.narrel.demo.dto;
 
+import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.Accessors;
 import srl.narrel.demo.models.CondominioModel;
 
 @Data
-public class AppartamentoDTO extends BaseDto {
-	//Each ClassDto inherits father's field
-	//We put in the child dto only the parameter we need to expose
+@Accessors(fluent = true)
+@Builder
+public class AppartamentoDTO{
+	private Integer id;
+	private String errorEncountered;
+	private int errorCode;
 	private CondominioModel condominio;
 	private int piano;
 	private int numero;

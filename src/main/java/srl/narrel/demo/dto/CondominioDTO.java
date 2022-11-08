@@ -1,15 +1,17 @@
 package srl.narrel.demo.dto;
 
-import lombok.Data;
+import lombok.*;
 import lombok.experimental.Accessors;
+import lombok.experimental.SuperBuilder;
+import net.bytebuddy.implementation.bind.annotation.Super;
 
 @Data
 @Accessors(fluent = true)
-public class CondominioDTO extends BaseDto{
-
-	//ClassDto inherits father's field
+@Builder
+public class CondominioDTO {
+	private Integer id;
+	private String errorEncountered;
+	private int errorCode;
 	private String nome;
 	private String via;
-
-	
 }
