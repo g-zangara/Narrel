@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import srl.narrel.demo.models.GarageModel;
 
 
-public interface GarageRepository extends JpaRepository<GarageModel, Long> {
+public interface GarageRepository extends JpaRepository<GarageModel, Integer> {
  
 }

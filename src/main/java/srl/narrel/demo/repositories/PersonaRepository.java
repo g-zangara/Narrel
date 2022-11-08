@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import srl.narrel.demo.models.PersonaModel;
 
-public interface PersonaRepository extends JpaRepository<PersonaModel, Long> {
+public interface PersonaRepository extends JpaRepository<PersonaModel, Integer> {
  
 }
