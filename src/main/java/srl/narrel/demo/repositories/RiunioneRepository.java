@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import srl.narrel.demo.models.RiunioneModel;
 
-public interface RiunioneRepository extends JpaRepository<RiunioneModel, Long> {
+public interface RiunioneRepository extends JpaRepository<RiunioneModel, Integer> {
  
 }
