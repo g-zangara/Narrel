@@ -1,19 +1,11 @@
 package srl.narrel.demo.dto;
 
-public class PersonaDTO {
+import lombok.Data;
 
-	private Integer Id;
-
-	public Integer getId() {
-		return Id;
-	}
-
-	public void setId(Integer id) {
-		Id = id;
-	}
-	
-	//come prendo errore errorEncountered
-	
-	//come prendo errore errorCode
-	
+@Data
+public class PersonaDTO extends BaseDto{
+	//ClassDto inherits father's fields
+	private String nome;
+	private String cognome;
+	private String codiceFiscale;
 }

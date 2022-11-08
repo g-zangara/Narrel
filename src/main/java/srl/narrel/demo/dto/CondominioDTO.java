@@ -1,19 +1,15 @@
 package srl.narrel.demo.dto;
 
-public class CondominioDTO {
+import lombok.Data;
+import lombok.experimental.Accessors;
 
-	private Integer Id;
+@Data
+@Accessors(fluent = true)
+public class CondominioDTO extends BaseDto{
 
-	public Integer getId() {
-		return Id;
-	}
+	//ClassDto inherits father's field
+	private String nome;
+	private String via;
 
-	public void setId(Integer id) {
-		Id = id;
-	}
-	
-	//come prendo errore errorEncountered
-	
-	//come prendo errore errorCode
 	
 }

@@ -1,21 +1,17 @@
 package srl.narrel.demo.dto;
 
-public class AppartamentoDTO {
-	
-	private Integer Id;
+import lombok.Data;
+import srl.narrel.demo.models.CondominioModel;
 
-	public Integer getId() {
-		return Id;
-	}
+@Data
+public class AppartamentoDTO extends BaseDto {
+	//Each ClassDto inherits father's field
+	//We put in the child dto only the parameter we need to expose
+	private CondominioModel condominio;
+	private int piano;
+	private int numero;
+	private double metratura;
+	private double consumoRiscaldamento;
 
-	public void setId(Integer id) {
-		Id = id;
-	}
-	
-	//come prendo errore errorEncountered
-	
-	//come prendo errore errorCode
-	
-	
-
+	//For now we ometted owner's list, because we could let the user set them late, (MAYBE)
 }

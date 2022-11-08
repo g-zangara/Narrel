@@ -1,19 +1,13 @@
 package srl.narrel.demo.dto;
 
-public class GarageDTO {
+import lombok.Data;
+import srl.narrel.demo.models.CondominioModel;
 
-	private Integer Id;
-
-	public Integer getId() {
-		return Id;
-	}
-
-	public void setId(Integer id) {
-		Id = id;
-	}
-	
-	//come prendo errore errorEncountered
-	
-	//come prendo errore errorCode
+@Data
+public class GarageDTO extends BaseDto{
+	//ClassDto inherits father's field
+	private CondominioModel condominio;
+	private int numero;
+	private double consumoElettrico;
 	
 }

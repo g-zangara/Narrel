@@ -1,19 +1,14 @@
 package srl.narrel.demo.dto;
 
-public class RiunioneDTO {
+import lombok.Data;
 
-	private Integer Id;
+import java.util.Date;
 
-	public Integer getId() {
-		return Id;
-	}
+@Data
+public class RiunioneDTO extends BaseDto{
 
-	public void setId(Integer id) {
-		Id = id;
-	}
-	
-	//come prendo errore errorEncountered
-	
-	//come prendo errore errorCode
+	//Class dto inherits father's field
+	private String location;
+	private Date data;
 	
 }
