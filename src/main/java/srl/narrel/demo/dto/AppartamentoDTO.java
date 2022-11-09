@@ -8,7 +8,7 @@ import srl.narrel.demo.models.CondominioModel;
 @Data
 @Accessors(fluent = true)
 @Builder
-public class AppartamentoDTO{
+public class AppartamentoDTO {
 	private Integer id;
 	private String errorEncountered;
 	private int errorCode;

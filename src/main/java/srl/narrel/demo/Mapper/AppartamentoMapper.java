@@ -14,7 +14,6 @@ public class AppartamentoMapper {
                 .numero(appartamentoModel.getNumero())
                 .piano(appartamentoModel.getPiano())
                 .metratura(appartamentoModel.getMetratura())
-                .condominio(appartamentoModel.getCondominio())
                 .build();
     }
 
@@ -25,7 +24,7 @@ public class AppartamentoMapper {
                 .piano(appartamentoDTO.piano())
                 .metratura(appartamentoDTO.metratura())
                 .proprietari(new ArrayList<>())
-                .condominio(appartamentoDTO.condominio())
                 .build();
+
     }
 }
