@@ -2,15 +2,18 @@ package srl.narrel.demo.models;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
+import lombok.*;
+import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
 @Entity
+@Builder
 @Data
 public class RiunioneModel {
+    public RiunioneModel(){}
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -39,4 +42,5 @@ public class RiunioneModel {
     )
     @JsonIgnore
     private List<PersonaModel> partecipanti;
+
 }

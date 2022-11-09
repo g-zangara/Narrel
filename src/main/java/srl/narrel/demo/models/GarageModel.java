@@ -1,5 +1,6 @@
 package srl.narrel.demo.models;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,7 +9,9 @@ import javax.persistence.*;
 @Entity
 @Data
 @Table(name = "garage")
+@Builder
 public class GarageModel {
+    public GarageModel(){}
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")

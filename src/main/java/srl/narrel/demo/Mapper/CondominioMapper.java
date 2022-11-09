@@ -14,6 +14,10 @@ public class CondominioMapper {
     }
 
     public CondominioModel toCondominio(CondominioDTO condominioDTO){
-        return new CondominioModel(); //I have to use builder pattern even in the model, so i'll complte later
+        return CondominioModel.builder()
+                .id(condominioDTO.id())
+                .nome(condominioDTO.nome())
+                .via(condominioDTO.via())
+                .build();
     }
 }

@@ -15,6 +15,6 @@ public class GarageDTO {
 	//ClassDto inherits father's field
 	private CondominioModel condominio;
 	private int numero;
-	private double consumoElettrico;
+	private float consumoElettrico;
 	
 }

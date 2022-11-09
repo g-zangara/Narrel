@@ -4,6 +4,8 @@ import org.springframework.stereotype.Component;
 import srl.narrel.demo.dto.AppartamentoDTO;
 import srl.narrel.demo.models.AppartamentoModel;
 
+import java.util.ArrayList;
+
 @Component
 public class AppartamentoMapper {
     public AppartamentoDTO toDto(AppartamentoModel appartamentoModel){
@@ -12,10 +14,18 @@ public class AppartamentoMapper {
                 .numero(appartamentoModel.getNumero())
                 .piano(appartamentoModel.getPiano())
                 .metratura(appartamentoModel.getMetratura())
+                .condominio(appartamentoModel.getCondominio())
                 .build();
     }
 
     public AppartamentoModel toAppartamentoModel(AppartamentoDTO appartamentoDTO){
-        return null; //i have to modify model.
+        return AppartamentoModel.builder()
+                .id(appartamentoDTO.id())
+                .numero(appartamentoDTO.numero())
+                .piano(appartamentoDTO.piano())
+                .metratura(appartamentoDTO.metratura())
+                .proprietari(new ArrayList<>())
+                .condominio(appartamentoDTO.condominio())
+                .build();
     }
 }

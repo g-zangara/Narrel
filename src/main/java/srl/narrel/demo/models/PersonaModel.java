@@ -1,6 +1,7 @@
 package srl.narrel.demo.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -9,7 +10,9 @@ import java.util.List;
 
 @Entity
 @Data
+@Builder
 public class PersonaModel {
+    public PersonaModel(){}
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
