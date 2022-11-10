@@ -13,7 +13,7 @@ import java.util.List;
 @Table(name="appartamento")
 @Builder
 public class AppartamentoModel {
-    public AppartamentoModel(){}
+ 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,4 +42,70 @@ public class AppartamentoModel {
     )
     @JsonIgnore
     private List<PersonaModel> proprietari;
+    
+    public AppartamentoModel(Integer id, CondominioModel c, int p, int n, double m, double cr) {
+    	this.id=id;
+    	this.condominio=c;
+    	this.piano=p;
+    	this.numero=n;
+    	this.metratura=m;
+    	this.consumoRiscaldamento=cr;
+    }
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public CondominioModel getCondominio() {
+		return condominio;
+	}
+
+	public void setCondominio(CondominioModel condominio) {
+		this.condominio = condominio;
+	}
+
+	public int getPiano() {
+		return piano;
+	}
+
+	public void setPiano(int piano) {
+		this.piano = piano;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public double getMetratura() {
+		return metratura;
+	}
+
+	public void setMetratura(double metratura) {
+		this.metratura = metratura;
+	}
+
+	public double getConsumoRiscaldamento() {
+		return consumoRiscaldamento;
+	}
+
+	public void setConsumoRiscaldamento(double consumoRiscaldamento) {
+		this.consumoRiscaldamento = consumoRiscaldamento;
+	}
+
+	public List<PersonaModel> getProprietari() {
+		return proprietari;
+	}
+
+	public void setProprietari(List<PersonaModel> proprietari) {
+		this.proprietari = proprietari;
+	}
+        
 }

@@ -3,9 +3,9 @@ package srl.narrel.demo.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import lombok.experimental.Accessors;
 
 import javax.persistence.*;
+
 import java.util.Date;
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 @Data
 public class RiunioneModel {
-    public RiunioneModel(){}
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -42,5 +42,67 @@ public class RiunioneModel {
     )
     @JsonIgnore
     private List<PersonaModel> partecipanti;
+
+
+	public RiunioneModel(int id2, Date data2, String location2, List<PersonaModel> arrayList,
+			List<PersonaModel> arrayList2) {
+		this.id=id2;
+		this.data=data2;
+		this.location=location2;
+		this.invitati=arrayList;
+		this.partecipanti=arrayList2;
+	}
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+	public String getLocation() {
+		return location;
+	}
+
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+
+	public Date getData() {
+		return data;
+	}
+
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+
+	public List<PersonaModel> getInvitati() {
+		return invitati;
+	}
+
+
+	public void setInvitati(List<PersonaModel> invitati) {
+		this.invitati = invitati;
+	}
+
+
+	public List<PersonaModel> getPartecipanti() {
+		return partecipanti;
+	}
+
+
+	public void setPartecipanti(List<PersonaModel> partecipanti) {
+		this.partecipanti = partecipanti;
+	}
+    
+    
 
 }

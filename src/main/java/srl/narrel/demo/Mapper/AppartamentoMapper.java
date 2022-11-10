@@ -3,28 +3,23 @@ package srl.narrel.demo.Mapper;
 import org.springframework.stereotype.Component;
 import srl.narrel.demo.dto.AppartamentoDTO;
 import srl.narrel.demo.models.AppartamentoModel;
-
-import java.util.ArrayList;
+import srl.narrel.demo.models.CondominioModel;
 
 @Component
 public class AppartamentoMapper {
-    public AppartamentoDTO toDto(AppartamentoModel appartamentoModel){
-        return AppartamentoDTO.builder()
-                .id(appartamentoModel.getId())
-                .numero(appartamentoModel.getNumero())
-                .piano(appartamentoModel.getPiano())
-                .metratura(appartamentoModel.getMetratura())
-                .build();
+    public AppartamentoDTO toDto(AppartamentoModel model){
+       AppartamentoDTO dto = new AppartamentoDTO();
+       
+       dto.setCondominioId(model.getCondominio().getId());
+       dto.setPiano(model.getPiano());
+       dto.setNumero(model.getNumero());
+       dto.setMetratura(model.getMetratura());
+       dto.setConsumoRiscaldamento(model.getConsumoRiscaldamento());
+       
+       return dto;
     }
 
-    public AppartamentoModel toAppartamentoModel(AppartamentoDTO appartamentoDTO){
-        return AppartamentoModel.builder()
-                .id(appartamentoDTO.id())
-                .numero(appartamentoDTO.numero())
-                .piano(appartamentoDTO.piano())
-                .metratura(appartamentoDTO.metratura())
-                .proprietari(new ArrayList<>())
-                .build();
-
+    public AppartamentoModel toModel(AppartamentoDTO dto){
+        return new AppartamentoModel(dto.getId(), new CondominioModel(dto.getCondominioId()),dto.getPiano(),dto.getNumero(),dto.getMetratura(),dto.getConsumoRiscaldamento());
     }
 }

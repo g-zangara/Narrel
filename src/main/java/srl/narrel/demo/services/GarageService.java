@@ -3,7 +3,6 @@ package srl.narrel.demo.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import srl.narrel.demo.models.GarageModel;
-import srl.narrel.demo.repositories.CondominioRepository;
 import srl.narrel.demo.repositories.GarageRepository;
 
 import java.util.List;
