@@ -1,7 +1,10 @@
 package srl.narrel.demo.services;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import srl.narrel.demo.dto.AppartamentoDTO;
 import srl.narrel.demo.models.AppartamentoModel;
 import srl.narrel.demo.repositories.AppartamentoRepository;
 
@@ -11,7 +14,7 @@ import java.util.Optional;
 @Service
 public class AppartamentoService {
     @Autowired
-    private AppartamentoRepository appartamentoRepository;
+    private static AppartamentoRepository appartamentoRepository;
 
     public List<AppartamentoModel> getAll(){
         return appartamentoRepository.findAll();
@@ -25,8 +28,16 @@ public class AppartamentoService {
         appartamentoRepository.deleteById(id);
    }
 
-   public AppartamentoModel add(AppartamentoModel appartamento){
-        return appartamentoRepository.save(appartamento);
+   public static AppartamentoDTO add(AppartamentoDTO appartamentoDto){
+	   
+	   AppartamentoModel appartamento = new AppartamentoModel(); 
+	   BeanUtils.copyProperties(appartamentoDto, appartamento);
+	   
+	   appartamento=appartamentoRepository.save(appartamento);
+	   
+	   BeanUtils.copyProperties(appartamento, appartamentoDto);
+	   
+        return appartamentoDto;
    }
 
 }

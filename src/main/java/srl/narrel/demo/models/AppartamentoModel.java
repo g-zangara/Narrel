@@ -52,6 +52,8 @@ public class AppartamentoModel {
     	this.consumoRiscaldamento=cr;
     }
 
+	public AppartamentoModel() {}
+
 	public Integer getId() {
 		return id;
 	}
